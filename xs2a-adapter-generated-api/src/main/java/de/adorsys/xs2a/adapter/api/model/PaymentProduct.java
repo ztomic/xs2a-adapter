@@ -21,7 +21,9 @@ public enum PaymentProduct {
 
     PAIN_001_TARGET_2_PAYMENTS("pain.001-target-2-payments"),
 
-    PAIN_001_CROSS_BORDER_CREDIT_TRANSFERS("pain.001-cross-border-credit-transfers");
+    PAIN_001_CROSS_BORDER_CREDIT_TRANSFERS("pain.001-cross-border-credit-transfers"),
+
+    DOMESTIC_CREDIT_TRANSFERS_HR("domestic-credit-transfers-hr");
 
     private String value;
 

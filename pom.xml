@@ -73,6 +73,7 @@
         <sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 
         <!-- spring -->
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
@@ -290,6 +291,19 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -456,13 +470,13 @@
 
     <distributionManagement>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>deployment</id>
+            <url>http://dev1-git1.int.ch:8675/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/adorsys/xs2a-adapter</url>
+            <uniqueVersion>false</uniqueVersion>
+            <id>deployment</id>
+            <url>http://dev1-git1.int.ch:8675/nexus/content/repositories/snapshot-policy</url>
         </snapshotRepository>
     </distributionManagement>
 
